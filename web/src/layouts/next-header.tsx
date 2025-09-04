@@ -17,10 +17,8 @@ import { Routes } from '@/routes';
 import { camelCase } from 'lodash';
 import {
   ChevronDown,
-  CircleHelp,
   Cpu,
   File,
-  Github,
   House,
   Library,
   MessageSquareText,
@@ -32,10 +30,6 @@ import React, { useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from 'umi';
 import { BellButton } from './bell-button';
-
-const handleDocHelpCLick = () => {
-  window.open('https://ragflow.io/docs/dev/category/guides', 'target');
-};
 
 export function Header() {
   const { t } = useTranslation();
@@ -107,23 +101,6 @@ export function Header() {
 
   return (
     <section className="p-5 pr-14 flex justify-between items-center ">
-      <div className="flex items-center gap-4">
-        <img
-          src={'/logo.svg'}
-          alt="logo"
-          className="size-10 mr-[12]"
-          onClick={handleLogoClick}
-        />
-        <a
-          className="flex items-center gap-1.5 text-text-secondary"
-          target="_blank"
-          href="https://github.com/infiniflow/ragflow"
-          rel="noreferrer"
-        >
-          <Github className="size-4" />
-          {/* <span className=" text-base">21.5k stars</span> */}
-        </a>
-      </div>
       <Segmented
         options={options}
         value={pathname}
@@ -145,9 +122,6 @@ export function Header() {
             ))}
           </DropdownMenuContent>
         </DropdownMenu>
-        <Button variant={'ghost'} onClick={handleDocHelpCLick}>
-          <CircleHelp />
-        </Button>
         <Button variant={'ghost'} onClick={onThemeClick}>
           {theme === 'light' ? <Sun /> : <Moon />}
         </Button>

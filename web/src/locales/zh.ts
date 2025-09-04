@@ -77,7 +77,7 @@ export default {
       fileManager: '文件管理',
       flow: '智能体',
       search: '搜索',
-      welcome: '欢迎来到',
+      welcome: '欢迎使用',
       dataset: '数据集',
     },
     knowledgeList: {
